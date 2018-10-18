@@ -34,16 +34,16 @@
         </plugins>
     </build>
     
- <distributionManagement>
+<distributionManagement>
     <repository>
         <id>central</id>
-        <name>0b08964ca52e-releases</name>
-        <url>http://35.174.166.128:8081/artifactory/maven</url>
+        <name>Ankits-MBP-releases</name>
+        <url>http://192.168.0.117:8081/artifactory/maven</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>0b08964ca52e-snapshots</name>
-        <url>http://35.174.166.128:8081/artifactory/maven</url>
+        <name>Ankits-MBP-snapshots</name>
+        <url>http://192.168.0.117:8081/artifactory/maven</url>
     </snapshotRepository>
 </distributionManagement>
 
