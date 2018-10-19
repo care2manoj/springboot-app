@@ -37,13 +37,13 @@
 <distributionManagement>
     <repository>
         <id>central</id>
-        <name>Ankits-MBP-releases</name>
-        <url>http://192.168.0.117:8081/artifactory/maven</url>
+        <name>ip-172-31-43-5-releases</name>
+        <url>http://18.224.246.117:8081/artifactory/springboot</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>Ankits-MBP-snapshots</name>
-        <url>http://192.168.0.117:8081/artifactory/maven</url>
+        <name>ip-172-31-43-5-snapshots</name>
+        <url>http://18.224.246.117:8081/artifactory/springboot</url>
     </snapshotRepository>
 </distributionManagement>
 
