@@ -38,12 +38,12 @@
     <repository>
         <id>central</id>
         <name>ip-172-31-19-50-releases</name>
-        <url>http://18.224.136.90:8081/artifactory/springboot</url>
+        <url>http://18.191.29.129:8081/artifactory/springboot</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>ip-172-31-19-50-snapshots</name>
-        <url>http://18.224.136.90:8081/artifactory/springboot</url>
+        <url>http://18.191.29.129:8081/artifactory/springboot</url>
     </snapshotRepository>
 </distributionManagement>
 
