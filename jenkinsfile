@@ -1,0 +1,26 @@
+node{
+    stage('SCM Checkout'){
+        git credentialsId: 'cb3e1716-2b70-4f48-8c26-f650f9120107', url: 'https://github.com/care2manoj/springboot-app.git'
+    }
+    stage('Mvn package'){
+        def mvnHome = tool name: 'mymaven', type: 'maven'
+        def mvnCMD = "${mvnHome}/bin/mvn"
+        sh "${mvnCMD} clean package"
+    }
+    stage('Build Docker Image'){
+        sh 'docker build -t care2manoj/springboot-app:2.0.0 .'
+        
+    }
+    stage('Push Docker Image'){
+        withCredentials([string(credentialsId: 'DockerHubPass', variable: 'DockerHubPass')]){
+            sh "docker login -u care2manoj -p ${DockerHubPass}"
+    }
+        sh 'docker push care2manoj/springboot-app:2.0.0'
+    }
+    stage('Deploy to Tomcat'){
+		sshagent(['pem-tomcat']) {
+		sh 'scp -o StrictHostKeyChecking=no target/*.jar ec2-user@54.174.38.159:/opt/tomcat9/webapps/'
+    	}
+    }
+    
+}
