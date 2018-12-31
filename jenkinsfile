@@ -18,7 +18,7 @@ node{
         sh 'docker push care2manoj/springboot-app:2.0.0'
     }
     stage('Deploy to Tomcat'){
-		sshagent(['pem-tomcat']) {
+		sshagent(['ppk-tomcat']) {
 		sh 'scp -o StrictHostKeyChecking=no target/*.jar ubuntu@54.173.144.248:/opt/tomcat9/webapps/'
     	}
     }
