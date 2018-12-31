@@ -22,5 +22,11 @@ node{
 		sh 'scp -o StrictHostKeyChecking=no target/*.jar ubuntu@54.173.144.248:/opt/tomcat9/webapps/'
     	}
     }
+    stage('Run Container on Prod Server'){
+        def dockerRun = 'docker run -p 8080:8080 -d -name springboot-app care2manoj/springboot-app:2.0.0'
+        sshagent(['ppk-tomcat']) {
+            sh "ssh -o StrictHostKeyChecking=no ubuntu@54.174.38.159 ${dockerRun}"
+        }
+    }
     
 }
